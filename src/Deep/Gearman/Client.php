@@ -29,11 +29,16 @@ class Client extends RPC
      * @param $method
      * @param array $arguments
      * @return mixed
+     * @throws \ErrorException
      */
     public function __call($method, array $arguments=[])
     {
-        $name   = $this->getClassName();
-        $result = $this->getServerLink()->doNormal("$name::$method", json_encode($arguments));
+        $name    = $this->getClassName();
+        $methods = $this->getClassMethods();
+        if (!in_array($method, $methods)) {
+            throw new \ErrorException("Undeclared method $method in class $name");
+        }
+        $result  = $this->getServerLink()->doNormal("$name::$method", json_encode($arguments));
         return json_decode($result);
     }
 }

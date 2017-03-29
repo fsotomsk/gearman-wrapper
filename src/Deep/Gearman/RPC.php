@@ -64,12 +64,12 @@ abstract class RPC
     /**
      * Set RPC target object
      * @param $object
-     * @throws \Exception
+     * @throws \ErrorException
      */
     protected function setObject($object)
     {
         if (!is_object($object)) {
-            throw new \Exception("setObject failed: invalid object");
+            throw new \ErrorException("setObject failed: invalid object");
         }
         $this->object = $object;
     }
