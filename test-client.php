@@ -1,7 +1,7 @@
 <?php
 
-require_once 'Gearman/Worker.php';
-require_once 'Gearman/Client.php';
+require_once 'src/Deep/Gearman/RPC.php';
+require_once 'src/Deep/Gearman/Client.php';
 require_once 'Test.php';
 
 /**

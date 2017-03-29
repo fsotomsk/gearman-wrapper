@@ -10,12 +10,12 @@
 namespace Deep\Gearman;
 
 
-class Client extends Worker
+class Client extends RPC
 {
     /**
-     * Get gearman client instance
+     * Get gearman server instance Client
      * @inheritdoc
-     * @return \GearmanClient|\GearmanWorker
+     * @return \GearmanClient
      */
     protected function getServerLink()
     {
