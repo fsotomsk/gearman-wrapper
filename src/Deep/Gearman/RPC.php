@@ -22,9 +22,9 @@ abstract class RPC
     protected $object     = null;
 
     /**
-     * @var array
+     * @var \ReflectionClass
      */
-    protected $reflection = [];
+    protected $reflection = null;
 
     /**
      * Disabled public methods
